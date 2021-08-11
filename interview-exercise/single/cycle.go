@@ -13,7 +13,6 @@ func setpool(ch chan struct{}){
 		ch<- struct{}{}
 	}
 }
-// 本公开课来自于程序员在囧途教育(www.jtthink.com)
 func main() {
 	pool:=make(chan struct{},5)
 	setpool(pool)
