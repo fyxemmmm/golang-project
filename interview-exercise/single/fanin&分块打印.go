@@ -17,7 +17,6 @@ func main() {
 		for v := range res {
 			c.Writer.Write([]byte(v.(string)))
 			c.Writer.(http.Flusher).Flush()
-			//fmt.Println(v)
 		}
 	})
 	r.Run(":8080")
