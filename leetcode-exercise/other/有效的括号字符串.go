@@ -1,51 +1,31 @@
 package other
-
 func checkValidString(s string) bool {
-	left := 0
-	right := len(s)-1
-
-	if len(s) == 1 {
-		if s[0] == '*'{
-			return true
+	leftCount, rightCount := 0, 0
+	for i := 0; i < len(s); i ++ {
+		c := s[i]
+		if c == ')' {
+			rightCount ++
+		}else {
+			leftCount ++
 		}
-
-		return false
-	}
-
-	if len(s) == 2 {
-		if s[left] == '*' || s[right] == '*' {
-			return true
-		}
-		if s[left] == '(' && s[right] == ')' {
-			return true
-		}
-
-		return false
-	}
-
-	for left <= right {
-		if right-left == 0 || right -left == 1{
-			return true
-		}
-
-		if s[left] == '(' && s[right] == '(' {
+		if leftCount < rightCount {
 			return false
 		}
-
-		if s[left] == ')' && s[right] == ')' {
-			return false
-		}
-
-		if s[left] == ')' && s[right] == '(' {
-			return false
-		}
-
-
-		left ++
-		right --
 	}
 
+	leftCount, rightCount = 0, 0
+	for i := len(s)-1; i >= 0; i -- {
+		c := s[i]
+		if c == '(' {
+			leftCount ++
+		}else {
+			rightCount ++
+		}
 
-	return false
+		if rightCount < leftCount {
+			return false
+		}
+	}
+	return true
 
 }
