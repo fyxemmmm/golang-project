@@ -12,6 +12,7 @@ func nextPermutation(nums []int)  {
 		}
 		nums[i], nums[j] = nums[j], nums[i]
 	}
+	
 	left := i + 1
 	right := len(nums)-1
 	for left < right {

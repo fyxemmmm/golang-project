@@ -26,14 +26,12 @@ func Consumer(id int, ch chan int, done chan bool)  {
 
 func main() {
 	ch := make(chan int, 3)
-
 	consumerNumber := 2
 	done := make(chan bool, consumerNumber)
 	for i := 0; i < consumerNumber; i ++ {
 		go Consumer(i, ch, done)
 	}
-
-
+	
 	producerNumber := 2
 	producerDoneChan := make(chan bool, producerNumber)
 	for i := 0; i < producerNumber; i ++ {
@@ -44,14 +42,10 @@ func main() {
 		<- producerDoneChan
 	}
 	close(ch)
-
-
+	
 	for i := 0; i < consumerNumber; i ++ {
 		<- done
 	}
-
 	fmt.Println("finish")
 
 }
-
-
