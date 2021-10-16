@@ -1,4 +1,4 @@
-module fyx
+module github.com/fyxemmmm/go-prometheus-demo
 
 go 1.15
 

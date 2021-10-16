@@ -1,4 +1,4 @@
-module github.com/fyxemmmm/ceph-metrics
+module github.com/fyxemmmm/go-cobra-demo
 
 go 1.15
 

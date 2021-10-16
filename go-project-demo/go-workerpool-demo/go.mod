@@ -1,1 +1,1 @@
-module "suki.fyxemmmm.cn/my_test"
+module github.com/fyxemmmm/workpool

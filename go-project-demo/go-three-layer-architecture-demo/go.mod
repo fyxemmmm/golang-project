@@ -1,4 +1,4 @@
-module suki.fyxemmmm.cn/myetcd
+module github.com/fyxemmmm/go-three
 
 go 1.13
 
